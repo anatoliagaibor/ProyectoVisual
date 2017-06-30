@@ -1,12 +1,9 @@
-﻿
-
-Public Class profesor
-
+﻿Public Class profesor
     Inherits Persona
     Dim cantidad_venta As Integer = 5
 
-    Public Sub New(id As Integer, nombre As String, apellido As String, direccion As String, correo As String, cantidad_venta As Integer)
-        MyBase.New(id, nombre, apellido, direccion, correo)
+    Public Sub New(id As Integer, nombre As String, apellido As String, direccion As String, correo As String, cantidad_venta As Integer, cantidad_user As Integer)
+        MyBase.New(id, nombre, apellido, direccion, correo, cantidad_user)
         Me.Cantidad_venta1 = cantidad_venta
     End Sub
 
