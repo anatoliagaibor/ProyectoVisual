@@ -1,0 +1,2 @@
+c:\users\estudiante\documents\visual studio 2015\Projects\avnce1proyecto\avnce1proyecto\bin\Debug\avnce1proyecto.exe.config
+C:\Users\ESTUDIANTE\Downloads\avnce1proyecto\avnce1proyecto\bin\Debug\avnce1proyecto.exe.config
