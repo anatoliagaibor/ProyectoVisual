@@ -4,70 +4,21 @@ Module Module1
 
 
     Sub Main()
+
+        Dim administrador As UsuarioAdministrador = New UsuarioAdministrador("Roberto")
+        Dim estPost As EstudiantePosgrado = New EstudiantePosgrado("1", "julia", "mora", "urdenor", "200078659", "ing. computacion", "julia@espol.edu.ec", "3")
+        Dim estPreg As estudiantePregrado = New estudiantePregrado("2", "nancy", "chalen", "kennedy", "20147896235", "lic. diseño web", "nchalen@espol.edu.ec", "1")
+        Dim profesor As profesor = New profesor("3", "jessica", "gaibor", "urdesa", "manuel@espol.edu.ec", "5")
+
+        Dim validador As Boolean = False
+        Dim libro As Libros = New Libros()
+
+
         Dim pathW As String = "C:\Users\jessica\Downloads\avnce1proyecto\avnce1proyecto\inventario.xml"
         LeerDom(pathW)
 
-        Console.WriteLine("******************************************")
-        Console.WriteLine("MENU")
-        Console.WriteLine("1.- Buscar libro ")
-        Console.WriteLine("2.- Reservar libro ")
-        Console.WriteLine("3.- Regresar libro ")
-        Console.WriteLine("4.- Imprimir historial")
-        Console.WriteLine("5.- Salir")
-
-        Dim a As Integer = 5
-
-        Do
-
-
-            Dim op As Integer = Console.ReadLine()
-
-            Select Case op
-                Case 1
-                    Dim doc As New XmlDocument()
-                    Dim elemList As XmlNodeList = doc.GetElementsByTagName("title")
-                    Dim i As Integer
-                    For i = 0 To elemList.Count - 1
-                        Console.WriteLine(elemList(i).InnerXml)
-                        Console.WriteLine("-----------------------------------------")
-                    Next i
-                    Console.WriteLine("*******************BUSCAR LIBRO***************************")
-                    Console.WriteLine("digite el nombre del libro a buscar: ")
-                    Dim librobuscar As String = Console.ReadLine
-                    buscarLibro(librobuscar, pathW)
-                Case 2
-
-                Case 3
-
-                Case 4
-
-                Case Else
-                    Console.WriteLine("salir")
-                    Environment.Exit(0)
-            End Select
-        Loop While a = 5
         Console.ReadLine()
 
-    End Sub
-
-    Private Sub buscarLibro(libroBuscar As String, pathW As String)
-        Dim xmlDoc As New XmlDocument()
-        xmlDoc.Load(pathW)
-        Dim libros As XmlNodeList = xmlDoc.GetElementsByTagName("book")
-        Dim book As XmlNode
-
-        For Each book In libros
-            If book.HasChildNodes Then
-                For Each child As XmlNode In book.ChildNodes
-                    If book.ChildNodes("title").Value = libroBuscar Then
-                        Console.WriteLine(child.Name & ": " & child.InnerText)
-                    End If
-                Next
-
-            End If
-        Next
-
-        Console.WriteLine("-------------------------------------")
     End Sub
 
     Public Sub LeerDom(pathW As String)

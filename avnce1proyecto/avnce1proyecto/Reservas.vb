@@ -1,8 +1,8 @@
 ﻿Imports avnce1proyecto
 
 Public Class Reservas
-    Dim libro As New Libros
-    Dim persona As New Persona
+    Dim libro As Libros = New Libros()
+    Dim persona As Persona = New Persona()
     Dim arrlibro As New ArrayList
     Dim arrpersona As New ArrayList
 

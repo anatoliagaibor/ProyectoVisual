@@ -1,8 +1,8 @@
 ﻿Imports avnce1proyecto
 
 Public Class Persona
-    Dim usuario As New Usuario
-    Dim libro As New Libros
+    Dim usuario As Usuario = New Usuario()
+    Dim libro As Libros = New Libros()
     Dim id As Integer
     Dim nombre As String
     Dim apellido As String
@@ -10,7 +10,7 @@ Public Class Persona
     Dim correo As String
     Dim num_matricula As Integer
     Dim carrera As String
-    Dim cantidad_user As Integer = 5
+    Dim cantidad_user As Integer = 3
 
 
 
@@ -103,26 +103,16 @@ Public Class Persona
             libro = value
         End Set
     End Property
+    Public Sub New()
 
-    Public Sub New(id As Integer, nombre As String, apellido As String, direccion As String, num_matricula As Integer, carrera As String, correo As String, cantidad_user As Integer)
-        Me.Id1 = id
-        Me.Nombre1 = nombre
-        Me.Apellido1 = apellido
-        Me.Direccion1 = direccion
-        Me.Num_matricula1 = num_matricula
-        Me.Carrera1 = carrera
-        Me.Correo1 = correo
-        Me.cantidad_user = cantidad_user
     End Sub
 
-    Public Sub New(id As Integer, nombre As String, apellido As String, direccion As String, correo As String, cantidad_user As Integer)
+    Public Sub New(id As Integer, nombre As String, apellido As String, direccion As String, correo As String)
         Me.id = id
         Me.nombre = nombre
         Me.apellido = apellido
         Me.direccion = direccion
         Me.correo = correo
-        Me.cantidad_user = cantidad_user
-
     End Sub
 
     Public Sub New(usuario As Usuario, cantidad_user As Integer)
@@ -130,7 +120,17 @@ Public Class Persona
         Me.cantidad_user = cantidad_user
     End Sub
 
-    Public Sub New(libro As Libros)
-        Me.libro = libro
+    Public Sub New(nombre As String)
+        Me.nombre = nombre
+    End Sub
+
+    Public Sub New(id As Integer, nombre As String, apellido As String, direccion As String, correo As String, num_matricula As Integer, carrera As String)
+        Me.id = id
+        Me.nombre = nombre
+        Me.apellido = apellido
+        Me.direccion = direccion
+        Me.correo = correo
+        Me.num_matricula = num_matricula
+        Me.carrera = carrera
     End Sub
 End Class
