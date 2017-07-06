@@ -115,11 +115,6 @@ Public Class Persona
         Me.correo = correo
     End Sub
 
-    Public Sub New(usuario As Usuario, cantidad_user As Integer)
-        Me.usuario = usuario
-        Me.cantidad_user = cantidad_user
-    End Sub
-
     Public Sub New(nombre As String)
         Me.nombre = nombre
     End Sub

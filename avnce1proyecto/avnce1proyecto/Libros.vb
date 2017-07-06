@@ -101,10 +101,6 @@ Public Class Libros
         Console.Clear()
         Console.WriteLine(".....Menu Reservar Libro.....")
         Console.WriteLine()
-        Console.Write("Ingrese Nombre del Usuario: ")
-        nom = Console.ReadLine()
-        Console.Write("Ingrese Titulo del Libro: ")
-        tit = Console.ReadLine()
         Console.WriteLine("")
         xmlDoc.Load(path)
         Dim validadortitulo As Boolean = False
@@ -196,7 +192,93 @@ Public Class Libros
     End Sub
 
     Public Sub regresarLibros()
+        Dim nom As String = ""
+        Dim tit As String = ""
+        Dim fechaa As String = ""
+        Dim tiempo As String = ""
+        Console.Clear()
+        Console.WriteLine(".....Menu Regresar Libro.....")
+        Console.WriteLine()
+        Console.Write("Ingrese Nombre del Usuario: ")
+        nom = Console.ReadLine()
+        Console.Write("Ingrese Titulo del Libro: ")
+        tit = Console.ReadLine()
+        Console.Write("Ingrese fecha de regreso: ")
+        fechaa = Console.ReadLine()
+        Console.Write("Ingrese tiempo de regreso: ")
+        tiempo = Console.ReadLine()
+        Console.WriteLine("")
+        xmlDoc.Load(path)
+        Dim validador As Boolean = False
+        Dim registros As XmlNodeList = xmlDoc.GetElementsByTagName("registro")
+        Dim tnom As String = ""
+        Dim ttit As String = ""
+        For Each registro As XmlNode In registros
+            Console.WriteLine(registro.Attributes(0).Value)
+            If registro.Attributes(0).Value = "no" Then
+                Console.WriteLine("entro")
+                For Each child As XmlNode In registro.ChildNodes
+                    If child.LocalName = "libro" Then
+                        ttit = child.InnerText
+                    End If
+                    If child.LocalName = "name" Then
+                        tnom = child.InnerText
+                    End If
+                Next
+                If tnom = nom And ttit = tit Then
+                    validador = True
+                End If
+            End If
+        Next
+        If validador = False Then
+            Console.WriteLine("datos mal ingresados o no se encuentra en el sistema")
+            Console.ReadLine()
+        Else
+            For Each registro As XmlNode In registros
+                If registro.Attributes(0).Value = "no" Then
+                    For Each child As XmlNode In registro.ChildNodes
+                        If child.LocalName = "libro" Then
+                            ttit = child.InnerText
+                        End If
+                        If child.LocalName = "name" Then
+                            tnom = child.InnerText
+                        End If
+                    Next
+                    If tnom = nom And ttit = tit Then
+                        registro.Attributes(0).Value = "si"
+                        registro.ChildNodes.Item(2).InnerText = tiempo
+                        registro.ChildNodes.Item(3).InnerText = fechaa
 
+                    End If
+                End If
+
+            Next
+            Dim contadorl As Integer = 1
+            Dim titulos As XmlNodeList = xmlDoc.GetElementsByTagName("book")
+            For Each titul As XmlNode In titulos
+                For Each child As XmlNode In titul.ChildNodes
+                    If child.LocalName = "titulo" Then
+                        If child.InnerText = tit Then
+                            contadorl = Integer.Parse(titul.ChildNodes.Item(3).InnerText) + 1
+                            titul.ChildNodes.Item(3).InnerText = contadorl
+                        End If
+                    End If
+                Next
+            Next
+            Dim contadora As Integer = 1
+            Dim autores As XmlNodeList = xmlDoc.GetElementsByTagName("book")
+            For Each autor As XmlNode In autores
+                For Each child As XmlNode In autor.ChildNodes
+                    If child.LocalName = "nombre" Then
+                        If child.InnerText = nom Then
+                            contadora = Integer.Parse(autor.ChildNodes.Item(2).InnerText) - 1
+                            autor.ChildNodes.Item(2).InnerText = contadora
+                        End If
+                    End If
+                Next
+            Next
+            xmlDoc.Save("C:\Users\HP\Desktop\visual again\proyectoprimerparcial\libro.xml")
+        End If
     End Sub
 
     Public Sub generarHistorial()

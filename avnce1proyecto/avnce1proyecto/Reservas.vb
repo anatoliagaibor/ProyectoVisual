@@ -1,5 +1,5 @@
 ﻿Imports avnce1proyecto
-
+Imports System.Xml
 Public Class Reservas
     Dim libro As Libros = New Libros()
     Dim persona As Persona = New Persona()

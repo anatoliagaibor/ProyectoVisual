@@ -1,2 +1,12 @@
 c:\users\estudiante\documents\visual studio 2015\Projects\avnce1proyecto\avnce1proyecto\bin\Debug\avnce1proyecto.exe.config
 C:\Users\ESTUDIANTE\Downloads\avnce1proyecto\avnce1proyecto\bin\Debug\avnce1proyecto.exe.config
+C:\Users\jessica\Downloads\avnce1proyecto\avnce1proyecto\bin\Debug\avnce1proyecto.exe.config
+C:\Users\jessica\Downloads\avnce1proyecto\avnce1proyecto\bin\Debug\avnce1proyecto.exe
+C:\Users\jessica\Downloads\avnce1proyecto\avnce1proyecto\bin\Debug\avnce1proyecto.pdb
+C:\Users\jessica\Downloads\avnce1proyecto\avnce1proyecto\bin\Debug\avnce1proyecto.xml
+C:\Users\jessica\Downloads\avnce1proyecto\avnce1proyecto\obj\Debug\avnce1proyecto.vbprojResolveAssemblyReference.cache
+C:\Users\jessica\Downloads\avnce1proyecto\avnce1proyecto\obj\Debug\avnce1proyecto.Resources.resources
+C:\Users\jessica\Downloads\avnce1proyecto\avnce1proyecto\obj\Debug\avnce1proyecto.vbproj.GenerateResource.Cache
+C:\Users\jessica\Downloads\avnce1proyecto\avnce1proyecto\obj\Debug\avnce1proyecto.exe
+C:\Users\jessica\Downloads\avnce1proyecto\avnce1proyecto\obj\Debug\avnce1proyecto.xml
+C:\Users\jessica\Downloads\avnce1proyecto\avnce1proyecto\obj\Debug\avnce1proyecto.pdb
