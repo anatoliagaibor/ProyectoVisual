@@ -70,7 +70,7 @@
   <ItemGroup>
     <Compile Include="EstudiantePosgrado.vb" />
     <Compile Include="estudiantePregrado.vb" />
-    <Compile Include="Libro.vb" />
+    <Compile Include="Libros.vb" />
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -89,6 +89,8 @@
     </Compile>
     <Compile Include="profesor.vb" />
     <Compile Include="Persona.vb" />
+    <Compile Include="Reservas.vb" />
+    <Compile Include="Usuario.vb" />
     <Compile Include="UsuarioAdministrador.vb" />
   </ItemGroup>
   <ItemGroup>

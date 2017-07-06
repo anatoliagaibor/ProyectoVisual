@@ -6,6 +6,7 @@ Public Class Usuario
     Dim arr_user As ArrayList
     Dim persona As New Persona
     Dim reserva As New Reservas
+    Dim libros As New Libros
 
     Public Sub New(login As String, password As String, arr_user As ArrayList, persona As Persona, reserva As Reservas)
         Me.login = login
@@ -74,7 +75,7 @@ Public Class Usuario
             Dim opcion As Integer = Console.ReadLine
             Select Case opcion
                 Case 1
-                    libro.buscarLibros()
+                    libros.buscarLibros()
                 Case 2
                     cargarDatos()
                 Case 3
