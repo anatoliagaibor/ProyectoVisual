@@ -53,6 +53,7 @@ Public Class UsuarioAdministrador
                     continuar = False
                     Console.WriteLine("*******************IMPRIMIR LIBRO***************************")
                 Case Else
+                    continuar = False
                     Console.WriteLine("salir")
                     Console.Clear()
             End Select

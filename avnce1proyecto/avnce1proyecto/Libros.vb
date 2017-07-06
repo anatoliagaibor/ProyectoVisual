@@ -2,6 +2,7 @@
 
 Public Class Libros
     Private path As String = "C:\Users\jessica\Downloads\avnce1proyecto\avnce1proyecto\inventario.xml"
+    Private pathW As String = "C:\Users\jessica\Downloads\avnce1proyecto\avnce1proyecto\Usuarios.xml"
     Private xmlDoc As XmlDocument = New XmlDocument()
     Dim titulo As String
     Dim autores As String
@@ -95,95 +96,142 @@ Public Class Libros
     End Sub
 
     Public Sub reservarLibros()
-        Dim nom As String = ""
-        Dim tit As String = ""
+        Dim nombreUser As String = ""
+        Dim titulolibro As String = ""
+        Dim fechareserva As String = ""
+        Console.Clear()
         Console.WriteLine(".....Menu Reservar Libro.....")
         Console.WriteLine()
+        Console.Write("Ingrese Nombre del Usuario: ")
+        nombreUser = Console.ReadLine()
+        Console.Write("Ingrese Titulo del Libro: ")
+        titulolibro = Console.ReadLine()
+        Console.Write("Ingrese fecha del reserva: ")
+        fechareserva = Console.ReadLine()
         Console.WriteLine("")
         xmlDoc.Load(path)
+        xmlDoc.Load(pathW)
+
         Dim validadortitulo As Boolean = False
-        Dim titulos As XmlNodeList = xmlDoc.GetElementsByTagName("book")
+        Dim titulos As XmlNodeList = xmlDoc.GetElementsByTagName("title")
         For Each titul As XmlNode In titulos
             For Each child As XmlNode In titul.ChildNodes
                 If child.LocalName = "title" Then
-                    If child.InnerText = tit Then
+                    If child.InnerText = titulolibro Then
                         validadortitulo = True
                     End If
                 End If
             Next
         Next
+
+
         Dim validadornombre As Boolean = False
         Dim autores As XmlNodeList = xmlDoc.GetElementsByTagName("persona")
         For Each autor As XmlNode In autores
             For Each child As XmlNode In autor.ChildNodes
                 If child.LocalName = "nombre" Then
-                    If child.InnerText = nom Then
+                    If child.InnerText = nombreUser Then
                         validadornombre = True
                     End If
                 End If
             Next
         Next
+
+
         If validadortitulo = False Or validadornombre = False Then
-            Console.WriteLine("ingreso mal los datos")
+            Console.WriteLine("ingreso mal los datosfdf")
+
             Console.ReadLine()
         End If
+
+
         If validadornombre = True And validadortitulo = True Then
             Dim contadorl As Integer = 0
             For Each titul As XmlNode In titulos
                 For Each child As XmlNode In titul.ChildNodes
                     If child.LocalName = "title" Then
-                        If child.InnerText = tit Then
+                        If child.InnerText = titulolibro Then
                             contadorl = Integer.Parse(titul.ChildNodes.Item(3).InnerText)
                         End If
                     End If
                 Next
             Next
-            Dim contadora As Integer = 0
-            Dim contadorb As Integer = 0
+
+            Dim contador_a As Integer = 0
+            Dim contador_b As Integer = 0
             For Each autor As XmlNode In autores
                 For Each child As XmlNode In autor.ChildNodes
                     If child.LocalName = "nombre" Then
-                        If child.InnerText = nom Then
-                            contadora = Integer.Parse(autor.ChildNodes.Item(2).InnerText)
-                            contadorb = Integer.Parse(autor.ChildNodes.Item(5).InnerText)
+                        If child.InnerText = nombreUser Then
+                            contador_a = Integer.Parse(autor.ChildNodes.Item(2).InnerText)
+                            contador_b = Integer.Parse(autor.ChildNodes.Item(5).InnerText)
                         End If
                     End If
                 Next
             Next
+
+
             Dim valib As Boolean = False
             Dim valic As Boolean = False
+
             If contadorl = 0 Then
                 Console.WriteLine("no hay libros disponibles")
             Else
                 valib = True
             End If
-            If contadora >= contadorb Then
+            If contador_a >= contador_b Then
                 Console.WriteLine("no se puede alquilar")
             Else
                 valic = True
             End If
+
+
             If valib = True And valic = True Then
                 For Each titul As XmlNode In titulos
                     For Each child As XmlNode In titul.ChildNodes
                         If child.LocalName = "title" Then
-                            If child.InnerText = tit Then
+                            If child.InnerText = titulolibro Then
                                 contadorl = Integer.Parse(titul.ChildNodes.Item(3).InnerText) - 1
                                 titul.ChildNodes.Item(3).InnerText = contadorl
                             End If
                         End If
                     Next
                 Next
+
+
                 For Each autor As XmlNode In autores
                     For Each child As XmlNode In autor.ChildNodes
                         If child.LocalName = "nombre" Then
-                            If child.InnerText = nom Then
-                                contadora = Integer.Parse(autor.ChildNodes.Item(2).InnerText) + 1
-                                autor.ChildNodes.Item(2).InnerText = contadora
+                            If child.InnerText = nombreUser Then
+                                contador_a = Integer.Parse(autor.ChildNodes.Item(2).InnerText) + 1
+                                autor.ChildNodes.Item(2).InnerText = contador_a
                             End If
                         End If
                     Next
                 Next
-                xmlDoc.Save("C:\Users\jessica\Downloads\avnce1proyecto\avnce1proyecto\inventario.xml")
+
+
+                Dim registro As XmlElement = xmlDoc.CreateElement("registro")
+                Dim entregado As XmlAttribute = xmlDoc.CreateAttribute("entregado")
+                entregado.InnerText = "no"
+
+                registro.SetAttribute("entregado", "no")
+                Dim libro As XmlElement = xmlDoc.CreateElement("libro")
+                libro.InnerText = titulo
+                registro.AppendChild(libro)
+                Dim name As XmlElement = xmlDoc.CreateElement("name")
+                name.InnerText = nombreUser
+                registro.AppendChild(name)
+                Dim tiempo As XmlElement = xmlDoc.CreateElement("tiempo")
+                tiempo.InnerText = "0"
+                registro.AppendChild(tiempo)
+                Dim fecha As XmlElement = xmlDoc.CreateElement("fecha")
+                fecha.InnerText = fechareserva
+                registro.AppendChild(fecha)
+                Dim contador As Integer = xmlDoc.GetElementsByTagName("historial").Count - 1
+                Dim coleccion As XmlNode = xmlDoc.GetElementsByTagName("historial").Item(contador)
+                coleccion.AppendChild(registro)
+                xmlDoc.Save("C:\Users\jessica\Downloads\avnce1proyecto\avnce1proyecto\reservas.xml")
             End If
             Console.ReadLine()
         End If
