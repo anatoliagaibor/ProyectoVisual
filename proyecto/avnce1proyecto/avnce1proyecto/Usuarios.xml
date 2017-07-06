@@ -1,0 +1,34 @@
+﻿<usuarios>
+  <persona admi ="si" usu="nan" cla="1234">
+    <nombre>nancy</nombre>
+    <edad>23</edad>
+    <numerorenta>0</numerorenta>
+    <correo>nancy@espol.edu.ec</correo>
+    <rol>administrador</rol>
+    <limite>5</limite>
+  </persona>
+  <persona admi = "no" usu="jese" cla="1234">
+    <nombre>jessica</nombre>
+    <edad>25</edad>
+    <numerorenta>0</numerorenta>
+    <correo>jose@espol.edu.ec</correo>
+    <rol>estudiante posgrado</rol>
+    <limite>3</limite>
+  </persona>
+  <persona admi = "no" usu="car" cla="1234">
+    <nombre>Carlos</nombre>
+    <edad>41</edad>
+    <numerorenta>0</numerorenta>
+    <correo>carlos@espol.edu.ec</correo>
+    <rol>estudiante pregrado</rol>
+    <limite>1</limite>
+  </persona>
+  <persona admi ="si" usu="chir" cla="1234">
+    <nombre>chirtian</nombre>
+    <edad>89</edad>
+    <numerorenta>0</numerorenta>
+    <correo>chirtian@espol.edu.ec</correo>
+    <rol>profesor</rol>
+    <limite>5</limite>
+  </persona>
+</usuarios>

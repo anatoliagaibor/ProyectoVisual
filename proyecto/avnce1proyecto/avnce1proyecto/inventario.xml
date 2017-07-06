@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<catalog>
+   <book id="1">
+      <title>juego de tronos</title>
+      <author>George R. R. Martin</author>
+      <category>ficcion</category>
+      <price>50</price>
+      <description>La novela se caracteriza por su estética medieval,1 el uso de numerosos personajes bien detallados.</description>
+      <disponible>5</disponible>
+   </book>
+   <book id="2">
+      <title>Stardust</title>
+      <author>Neil Gaiman</author>
+      <category>ficcion</category>
+      <price>40</price>
+      <description>La fábula trata las aventuras de un joven de la villa de Wall ("muro" en inglés), que limita con la tierra mágica de Faerie. Este joven es Tristran Thorn, que decide salir en busca de una estrella que cayó a tierra para así probar su amor a Victoria Forester. </description>
+      <disponible>10</disponible>
+   </book>
+   <book id="3">
+      <title>El nombre del viento</title>
+      <author>Patrick Rothfuss</author>
+      <category>ficcion</category>
+      <price>25</price>
+      <description>He robado princesas a reyes agónicos. Incendié la ciudad de Trebon. He pasado la noche con Felurian y he despertado vivo y cuerdo. </description>
+      <disponible>8</disponible>
+   </book>
+   <book id="4">
+      <title>Señor de los anillos</title>
+      <author>J. R. R. Tolkien</author>
+      <category>Fantasia</category>
+      <price>80</price>
+      <description> basada en el primer tomo de la novela homónima del escritor británico de literatura fantástica J. R. R. Tolkien; adaptado al cine por el neozelandés Peter Jackson.</description>
+      <disponible>10</disponible>
+   </book>
+   <book id="5">
+      <title>El Hobbit</title>
+      <author>Tolkien</author>
+      <category>fantasia</category>
+      <price>75</price>
+      <description>Fue escrita por partes desde finales de los años 1920 hasta principios de los años 1930 y, en un principio, tan sólo tenía el objetivo de divertir a los hijos pequeños de Tolkien.</description>
+      <disponible>12</disponible>
+   </book>
+   <book id="6">
+      <title>El Protector</title>
+      <author>Jodi ellen</author>
+      <category>Romantic</category>
+      <price>30</price>
+      <description>Las personas creen que tiene descifrada a Camille Logan: la niña de papi; hermosa, la joven malcriada con el balance bancario de su padre para financiar su estilo de vida. </description>
+      <disponible>15</disponible>
+   </book>
+   <book id="7">
+      <title>Nunca es tarde si la bicha es buena</title>
+      <author>Paula Rivers</author>
+      <category>Romantic</category>
+      <price>28</price>
+      <description>Teresa es una mujer que, a pesar de sus complejos y sus excesivas curvas, nunca se muerde la lengua. Incluso para criticar a Kin, uno de los abogados más sexys de la empresa en la que trabaja, cuya meta es dejar extasiadas a las mujeres con sus artes sexuales.</description>
+      <disponible>5</disponible>
+   </book>
+   <book id="8">
+      <title>Pasa la noche conmigo</title>
+      <author>Megan Maxwell</author>
+      <category>Erotic</category>
+      <price>10</price>
+      <description>Las fantasías femeninas volverán a hacerse realidad con esta secuela de «Pídeme lo que quieras», la saga erótica más morbosa.</description>
+      <disponible>5</disponible>
+   </book>
+   <book id="9">
+           <title>La pequeña oruga glotona</title>
+      <author>Eric Carle</author>
+      <category>Infantil</category>
+      <price>10</price>
+      <description>Nuestra librera Eva María Ares (Librería de Valladolid) recomienda La pequeña oruga glotona: "Libro sencillo e ilustrado que enseña a los más pequeños de la casa la magia de la metamorfosis de la naturaleza. </description>
+      <disponible>20</disponible>
+   </book>
+   <book id="10">
+          <title>El Principito</title>
+      <author>Anthonie de Saint</author>
+      <category>Infantil</category>
+      <price>12</price>
+      <description>La obra fue publicada en abril de 1943, tanto en inglés como en francés, por la editorial estadounidense Reynal  Hitchcock, mientras que la editorial francesa Éditions Gallimard no pudo imprimir la obra hasta 1946, tras la liberación de Francia. </description>
+      <disponible>30</disponible>
+   </book>
+  <historial>
+    <registro entregado ="si">
+      <libro>El Principito</libro>
+      <name>nancy</name>
+      <tiempo>13</tiempo>
+      <fecha>10/04/2017</fecha>
+    </registro>
+  </historial>
+</catalog>
