@@ -15,7 +15,6 @@ Public Class UsuarioAdministrador
         Dim op As Integer
         Dim continuar As Boolean
         Dim libro As Libros = New Libros()
-        Console.Clear()
         continuar = True
         While (continuar)
             Console.WriteLine("******************************************")

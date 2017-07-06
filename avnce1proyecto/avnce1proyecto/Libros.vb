@@ -59,7 +59,6 @@ Public Class Libros
 
     Public Sub buscarLibros()
         Dim opcion As String = ""
-        Console.Clear()
         Console.WriteLine(".....Menu Buscar Libro.....")
         Console.WriteLine()
         Console.WriteLine("1.Por Nombre")
@@ -98,7 +97,6 @@ Public Class Libros
     Public Sub reservarLibros()
         Dim nom As String = ""
         Dim tit As String = ""
-        Console.Clear()
         Console.WriteLine(".....Menu Reservar Libro.....")
         Console.WriteLine()
         Console.WriteLine("")
@@ -118,7 +116,7 @@ Public Class Libros
         Dim autores As XmlNodeList = xmlDoc.GetElementsByTagName("persona")
         For Each autor As XmlNode In autores
             For Each child As XmlNode In autor.ChildNodes
-                If child.LocalName = "author" Then
+                If child.LocalName = "nombre" Then
                     If child.InnerText = nom Then
                         validadornombre = True
                     End If
@@ -133,7 +131,7 @@ Public Class Libros
             Dim contadorl As Integer = 0
             For Each titul As XmlNode In titulos
                 For Each child As XmlNode In titul.ChildNodes
-                    If child.LocalName = "titulo" Then
+                    If child.LocalName = "title" Then
                         If child.InnerText = tit Then
                             contadorl = Integer.Parse(titul.ChildNodes.Item(3).InnerText)
                         End If
@@ -167,7 +165,7 @@ Public Class Libros
             If valib = True And valic = True Then
                 For Each titul As XmlNode In titulos
                     For Each child As XmlNode In titul.ChildNodes
-                        If child.LocalName = "titulo" Then
+                        If child.LocalName = "title" Then
                             If child.InnerText = tit Then
                                 contadorl = Integer.Parse(titul.ChildNodes.Item(3).InnerText) - 1
                                 titul.ChildNodes.Item(3).InnerText = contadorl
@@ -185,7 +183,7 @@ Public Class Libros
                         End If
                     Next
                 Next
-                xmlDoc.Save("C:\Users\jessica\Downloads\avnce1proyecto\avnce1proyecto\libros2.xml")
+                xmlDoc.Save("C:\Users\jessica\Downloads\avnce1proyecto\avnce1proyecto\inventario.xml")
             End If
             Console.ReadLine()
         End If
@@ -196,7 +194,6 @@ Public Class Libros
         Dim tit As String = ""
         Dim fechaa As String = ""
         Dim tiempo As String = ""
-        Console.Clear()
         Console.WriteLine(".....Menu Regresar Libro.....")
         Console.WriteLine()
         Console.Write("Ingrese Nombre del Usuario: ")
@@ -277,7 +274,7 @@ Public Class Libros
                     End If
                 Next
             Next
-            xmlDoc.Save("C:\Users\HP\Desktop\visual again\proyectoprimerparcial\libro.xml")
+            xmlDoc.Save("C:\Users\jessica\Downloads\avnce1proyecto\avnce1proyecto\inventario.xml")
         End If
     End Sub
 
@@ -294,20 +291,24 @@ Public Class Libros
         Dim auto As String = ""
         Dim cate As String = ""
         Dim cant As String = ""
+        Dim prec As String = ""
         Dim desc As String = ""
         For Each libro As XmlNode In libros
             For Each child As XmlNode In libro.ChildNodes
-                If child.LocalName = "autor" Then
+                If child.LocalName = "author" Then
                     auto = child.InnerText
                 End If
-                If child.LocalName = "titulo" Then
+                If child.LocalName = "title" Then
                     name = child.InnerText
                 End If
-                If child.LocalName = "categoria" Then
+                If child.LocalName = "category" Then
                     cate = child.InnerText
                 End If
-                If child.LocalName = "cantidad" Then
+                If child.LocalName = "disponible" Then
                     cant = Integer.Parse(child.InnerText)
+                End If
+                If child.LocalName = "price" Then
+                    prec = child.InnerText
                 End If
                 If child.LocalName = "description" Then
                     desc = child.InnerText
@@ -352,16 +353,16 @@ Public Class Libros
         Dim desc As String = ""
         For Each libro As XmlNode In libros
             For Each child As XmlNode In libro.ChildNodes
-                If child.LocalName = "autor" Then
+                If child.LocalName = "author" Then
                     auto = child.InnerText
                 End If
-                If child.LocalName = "titulo" Then
+                If child.LocalName = "title" Then
                     name = child.InnerText
                 End If
-                If child.LocalName = "categoria" Then
+                If child.LocalName = "category" Then
                     cate = child.InnerText
                 End If
-                If child.LocalName = "cantidad" Then
+                If child.LocalName = "disponible" Then
                     cant = Integer.Parse(child.InnerText)
                 End If
                 If child.LocalName = "description" Then
@@ -407,16 +408,16 @@ Public Class Libros
         Dim desc As String = ""
         For Each libro As XmlNode In libros
             For Each child As XmlNode In libro.ChildNodes
-                If child.LocalName = "autor" Then
+                If child.LocalName = "author" Then
                     auto = child.InnerText
                 End If
-                If child.LocalName = "titulo" Then
+                If child.LocalName = "title" Then
                     name = child.InnerText
                 End If
-                If child.LocalName = "categoria" Then
+                If child.LocalName = "category" Then
                     cate = child.InnerText
                 End If
-                If child.LocalName = "cantidad" Then
+                If child.LocalName = "disponible" Then
                     cant = Integer.Parse(child.InnerText)
                 End If
                 If child.LocalName = "description" Then
